@@ -37,11 +37,18 @@ poetry shell
 ```
 # Testing
 
-Run all tests in the `src\tests\` folder:
+To use `pytest` to run all tests in the `src\tests\` folder:
+
 
 ```bash
 poetry run pytest
 ```
+
+This will use `pytest` to search for files that start with test_*.py or *_test.py,
+and within those files run `test` prefixed functions and methods. 
+
+* See [pytest docs](https://docs.pytest.org/en/7.2.x/explanation/goodpractices.html)
+
 
 # Git
 
