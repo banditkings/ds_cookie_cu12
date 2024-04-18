@@ -41,9 +41,10 @@ optional = true
 
 [tool.poetry.group.rapids.dependencies]
 cudf-cu12 = { version = "^24.4", source = "nvidia_pypi" }
+dask-cudf-cu12 = { version = "^24.4", source = "nvidia_pypi" }
 cuml-cu12 = { version = "^24.4", source = "nvidia_pypi" }
 pynvjitlink-cu12 = { version = "^0.1.14", source = "nvidia_pypi" }
-pylibcraft-cu12 = { version = "^24.4", source = "nvidia_pypi }
+pylibraft-cu12 = { version = "^24.4", source = "nvidia_pypi" }
 
 [[tool.poetry.source]]
 name = "PyPI"
