@@ -40,9 +40,9 @@ kaleido = "0.2.1"
 optional = true
 
 [tool.poetry.group.rapids.dependencies]
-cudf-cu12 = "^24.4"
-dask-cudf-cu12 = "^24.4"
-cuml-cu12 = "^24.4"
+cudf-cu12 = { version = "^24.4", source = "nvidia_pypi" }
+dask-cudf-cu12 = { version = "^24.4", source = "nvidia_pypi" }
+cuml-cu12 = { version = "^24.4", source = "nvidia_pypi" }
 
 [[tool.poetry.source]]
 name = "PyPI"
@@ -51,7 +51,7 @@ priority = "primary"
 [[tool.poetry.source]]
 name = "nvidia_pypi"
 url = "https://pypi.nvidia.com"
-priority = "supplemental"
+priority = "explicit"
 
 [build-system]
 requires = ["poetry-core"]
