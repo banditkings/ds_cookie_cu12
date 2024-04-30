@@ -7,8 +7,8 @@ repos:
     -   id: trailing-whitespace
         stages: [commit]
         always_run: False
--   repo: https://github.com/hhatto/mirrors-autopep8
-    rev: v2.0.2
+-   repo: https://github.com/hhatto/autopep8
+    rev: v2.1.0
     hooks:
     -   id: autopep8 # ignore rules to workaround issues linting markdown in jupytext notebooks
         args: ["-i", "--ignore=W291, E402, E501"]  # ignore trailing ws, code before imports, and line length
