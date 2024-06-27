@@ -2,6 +2,16 @@
 
 .PHONY: clean
 
+all: clean data
+
+load_data:
+	python {{ cookiecutter.package_name }}/data/load.py
+
+transform_data:
+	python {{ cookiecutter.package_name }}/data/transform.py
+
+data: load_data transform_data
+
 clean:
 	rm -f data/02_intermediate/*.parquet
 	rm -f data/03_primary/*.parquet

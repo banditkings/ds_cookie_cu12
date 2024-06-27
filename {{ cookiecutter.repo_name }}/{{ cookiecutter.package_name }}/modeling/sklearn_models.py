@@ -10,13 +10,14 @@ from .base import BaseModel
 
 class SklearnModel(BaseModel):
     def __init__(self, **params) -> None:
-        self.model = None # specify model
+        self.model = None # Initialize scikit-learn model
 
     def build_pipeline(self, features):
         # specify the sklearn Pipeline here with steps
+        pass
 
     def train(self, X, y):
-        pass
+        self.model.fit(X, y)
 
     def cross_validate(self, X, y):
         # Train and Cross_validate
@@ -24,4 +25,4 @@ class SklearnModel(BaseModel):
 
     def predict(self, X):
         # i.e. self.model.predict(X) or self.pipeline.predict(X)
-        pass
+        self.model.predict(X)
