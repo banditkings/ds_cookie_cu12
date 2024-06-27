@@ -1,15 +1,17 @@
 # ds_cookie_cu12
 
-A Python data science [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/) for a `poetry` and `pyenv` user, which includes:
+My custom python data science [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/) for a `poetry` and `pyenv` user, which includes:
 
-1. A `src` folder where the main module for shared code should exist in `src/package_name`
-2. pre-commit hooks:
+1. pre-commit hooks:
    1. `autopep8`
    2. `poetry export` to sync dependencies with a requirements.txt file
-3. A local `.python-version` for `pyenv`
-4. Folder structure similar to `kedro`
-5. Optional dependencies groups for `plotly` 
-6. Optional dependency group for `rapids` assuming you have cuda 12 installed and are using an NVIDIA gpu
+2. A local `.python-version` for `pyenv`
+3. A `data` Folder structure similar to `kedro`
+4. Optional dependencies groups for `plotly`
+   * `poetry install --with plotly`
+5. Optional dependency group for `rapids` assuming you have cuda 12 installed and are using an NVIDIA gpu
+   * `poetry install --with rapids`
+6. `polars` included
 
 ## Usage
 
@@ -28,7 +30,7 @@ python -m cookiecutter https://github.com/banditkings/ds_cookie_cu12.git
 Then you can navigate to the folder inside and install the library with required dependencies using:
 
 ```bash
-poetry install --with plotly, rapids
+poetry install --with dev,plotly,rapids
 ```
 
 ## Project Structure
@@ -65,8 +67,10 @@ poetry install --with plotly, rapids
 │   
 └── {{ cookiecutter.package_name }}         <- Source code for this project
     ├── tests                               <- All tests for this package
-    ├── data                                <- Scripts to ETL data and perform feature engineering
-    ├── modeling                            <- Scripts to train models and use trained models to make predictions
+    ├── data                                <- Functions to ETL data and perform feature engineering
+    ├── evaluation                          <- Custom metrics and evaluation criteria
+    ├── experiments                         <- Experiment tracking and logging logic
+    ├── modeling                            <- Helper classes to train models and use trained models to make predictions
     └── utils                               <- Generic Utility functions 
 ```
 

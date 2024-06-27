@@ -22,11 +22,11 @@ This creates a `.python-version` file. During cookie creation this should have p
 ## Install dependencies and create the virtual env in `poetry`
 
 ```bash
-# Install required libraries
-poetry install
+# Install with optional dev and plotly dependencies
+poetry install --with dev,plotly
 ```
 
-This will install the dependencies and the {{ cookiecutter.package_name }} package and create a virtual environment and virtual shell. You can exit the virtual shell with crtl+d or `exit` in terminal.
+This will install the required dependencies and the {{ cookiecutter.package_name }} package and create a virtual environment and virtual shell. You can exit the virtual shell with crtl+d or `exit` in terminal.
 
 ## Resuming work
 
